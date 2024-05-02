@@ -52,11 +52,11 @@ function FindJobs() {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <Header />
       <Description />
       <Filters />
-      <div className="grid justify-center justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid mx-10 mt-4 justify-center justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {data.length > 0 &&
           data.map((job, i) => {
             console.log(job);
