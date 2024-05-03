@@ -9,6 +9,7 @@ const Description = () => {
         <a
           href="https://www.weekday.works/companies-work-culture-database"
           target="_blank"
+          rel="noreferrer"
           className="font-bold"
         >
           Access 150+ company reviews here
