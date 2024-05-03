@@ -21,8 +21,7 @@ const InfiniteScroll = ({ fetchData }) => {
 
   return (
     <div>
-      {/* Your data rendering logic */}
-      <div ref={sentinelRef}></div> {/* Sentinel element */}
+      <div ref={sentinelRef}></div> 
     </div>
   );
 };

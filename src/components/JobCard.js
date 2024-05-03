@@ -16,7 +16,7 @@ const JobCard = ({ job }) => {
     setShowFullText(!showFullText);
   };
 
-  console.log(job.jobRole);
+  // console.log(job.jobRole);
   return (
     <div className="bg-white p-4 mb-4 rounded-md shadow-md transform transition-transform hover:translate-y-[-5px] hover:shadow-lg cursor-pointer">
       <p className="shadow-md mb-2 flex items-center rounded-md text-[0.7rem] w-[10rem]">
@@ -26,14 +26,32 @@ const JobCard = ({ job }) => {
         <img src={logo} alt="company-logo" width={40} />
         <div>
           <div className="text-md">Weekday</div>
-          <div className="font-bold text-sm">{job.jobRole}</div>
-          <div className="text-sm">{job.location}</div>
+          <div className="font-bold text-sm">
+            {job.jobRole
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}
+          </div>
+          <div className="text-sm">
+            {job.location
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ")}
+          </div>
         </div>
       </div>
 
-      <div className="text-sm font-light">Estimated Salary: <span className="font-bold">${job.minJdSalary}K - ${job.maxJdSalary}K </span></div>
       <div className="text-sm font-light">
-        Experience Required: <span className="font-bold">{job.minExp} years - {job.maxExp} years</span>
+        Estimated Salary:{" "}
+        <span className="font-bold">
+          ${job.minJdSalary}K - ${job.maxJdSalary}K{" "}
+        </span>
+      </div>
+      <div className="text-sm font-light">
+        Experience Required:{" "}
+        <span className="font-bold">
+          {job.minExp} years - {job.maxExp} years
+        </span>
       </div>
       <div className="mb-2 mt-2 text-sm font-light">
         {truncatedText}
